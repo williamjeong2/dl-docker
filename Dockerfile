@@ -47,7 +47,7 @@ RUN conda install -y -c pytorch -c conda-forge -c nvidia \
     pytorch \
     torchvision \
     torchaudio \
-    pytorch-cuda=11.6
+    pytorch-cuda=11.6 \
     && conda install -y -c anaconda -c conda-forge \
     tensorflow-gpu
 
