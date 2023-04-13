@@ -30,6 +30,10 @@ RUN wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.
     && ln -s /root/miniconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh \
     && echo ". /root/miniconda3/etc/profile.d/conda.sh" >> ~/.bashrc \
     && echo "conda activate base" >> ~/.bashrc
+    
+# Update conda
+RUN conda update -n base conda \
+    && conda update --all
 
 # Install JupyterLab and commonly used libraries
 RUN conda install -y -c conda-forge \
