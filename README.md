@@ -18,7 +18,7 @@ This Dockerfile provides a complete environment for machine learning with PyTorc
 ### Build
 To build the Docker image, run the following command:
 ```bash
-docker build -t dl-docker .
+docker build -t my-deeplearning-jupyterlab .
 ```
 ### Pull
 To pull the Docker image from GitHub Packages, run the following command:
@@ -31,7 +31,7 @@ docker pull ghcr.io/williamjeong2/dl-docker/my-deeplearning-jupyterlab:latest
 
 To run the Docker container and start JupyterLab, run the following command:
 ```bash
-docker run --gpus all -p 8888:8888 -v /path/to/your/notebooks:/workspace dl-docker
+docker run --gpus all -p 8888:8888 -v /path/to/your/notebooks:/workspace my-deeplearning-jupyterlab
 ```
 
 - `--gpus all` option enables GPU acceleration
