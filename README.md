@@ -1,6 +1,6 @@
 # Dockerfile for Machine Learning with PyTorch and TensorFlow
 
-This Dockerfile provides a complete environment for machine learning with PyTorch and TensorFlow using CUDA. It uses the `nvidia/cuda:11.6.0-base-ubuntu18.04` base image and installs the following packages:
+This repository contains a Dockerfile that creates a Docker image for deep learning development. The image is based on the `nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04` image and includes the following libraries and tools:
 
 - Python 3.9
 - JupyterLab
@@ -10,33 +10,18 @@ This Dockerfile provides a complete environment for machine learning with PyTorc
 - seaborn
 - scikit-learn
 - scipy
-- PyTorch 1.13.1 with CUDA 11.6
+- PyTorch 2.0.0 with CUDA 11.8
 - TensorFlow (latest version)
 
-## Build or Pull
+## Build and Run Docker Image
 
-### Build
-To build the Docker image, run the following command:
+To build and run the dl-docker image, use the following command:
+
 ```bash
-docker build -t my-deeplearning-jupyterlab .
-```
-### Pull
-To pull the Docker image from GitHub Packages, run the following command:
-```bash
-docker pull ghcr.io/williamjeong2/dl-docker/my-deeplearning-jupyterlab:latest
+docker-compose up
 ```
 
-
-## Run
-
-To run the Docker container and start JupyterLab, run the following command:
-```bash
-docker run --gpus all -p 8888:8888 -v /path/to/your/notebooks:/workspace my-deeplearning-jupyterlab
-```
-
-- `--gpus all` option enables GPU acceleration
-- `-p 8888:8888` option maps port 8888 in the container to port 8888 on the host machine
-- `-v /path/to/your/notebooks:/workspace` option mounts the directory containing your Jupyter notebooks to the `/workspace` directory in the container
+If you want to change the external port, you can modify it in the `docker-compose.yml` file.  
 
 Then, access JupyterLab in your web browser at `http://localhost:8888`. You will need to enter the token shown in the container logs to login.
 
@@ -46,7 +31,6 @@ To access the notebook, open this file in a browser:
 Or copy and paste one of these URLs:
     http://(xxxx or 127.0.0.1):8888/lab?token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
-
 
 ## Acknowledgements
 
