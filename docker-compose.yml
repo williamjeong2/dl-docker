@@ -9,3 +9,6 @@ services:
       - "55555:8888"
     volumes:
       - .:/workspace
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all

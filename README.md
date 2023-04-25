@@ -18,7 +18,7 @@ This repository contains a Dockerfile that creates a Docker image for deep learn
 To build and run the dl-docker image, use the following command:
 
 ```bash
-docker-compose up
+docker-compose up --gpus all -d service_name
 ```
 
 If you want to change the external port, you can modify it in the `docker-compose.yml` file.  
